@@ -80,7 +80,7 @@ class BurgerBuilder extends React.Component {
     }
 
     purchaseContinueHandler = () => {
-        console.log('checkout');
+        console.log('puši kurac');
     }
 
     render() {
@@ -101,6 +101,7 @@ class BurgerBuilder extends React.Component {
                 >
                     <OrderSummary
                         ingredients={this.state.ingredients}
+                        price={this.state.totalPrice}
                         cancle={this.purchesCancelHandler}
                         continue={this.purchaseContinueHandler}
                     />
