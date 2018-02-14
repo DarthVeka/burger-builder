@@ -80,7 +80,7 @@ class BurgerBuilder extends React.Component {
     }
 
     purchaseContinueHandler = () => {
-        console.log('puši kurac');
+        alert('Ne moze. Ti si na dijeti.');
     }
 
     render() {
