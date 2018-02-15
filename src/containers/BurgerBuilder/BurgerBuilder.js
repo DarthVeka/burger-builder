@@ -80,7 +80,7 @@ class BurgerBuilder extends React.Component {
     }
 
     purchaseContinueHandler = () => {
-        alert('Nemođeeee! Ti si na dijeti hahaha ❤');
+        alert('fuck off... ❤');
     }
 
     render() {
