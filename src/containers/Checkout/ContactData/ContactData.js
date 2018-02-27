@@ -19,7 +19,7 @@ class ContactData extends Component {
     }
 
     orderHndler = (event) => {
-        event.preventDevault();
+        event.preventDefault();
 
         this.setState({
             loading: true
