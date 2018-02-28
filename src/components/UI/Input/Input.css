@@ -1,0 +1,36 @@
+.Input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.Label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.InputElement {
+    display: block;
+    height: 29px;
+    width: 100%;
+    margin: 20px auto;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 3px solid #eee;    
+    /* border-bottom: 3px solid rgba(143, 92, 44, 0.3); */
+    transition: border-bottom 360ms;    
+}
+
+.InputElement:focus {
+    outline: none;
+    border-bottom: 3px solid #40A4C8;    
+}
+
+.Invalid {
+    border-left: 5px solid #d31717;
+}
+
+.Invalid:focus {
+    border-bottom: 3px solid #d31717;       
+}
