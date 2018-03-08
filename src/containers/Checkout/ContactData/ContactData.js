@@ -7,7 +7,7 @@ import classes from './ContactData.css';
 import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
-import * as actionTypes from '../../../store/actions';
+import * as burgerBuilderActions from '../../../store/actions/index';
 
 class ContactData extends Component {
     state = {
@@ -227,7 +227,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        clearState: () => dispatch({type: actionTypes.CLEAR_STATE})
+        clearState: () => dispatch(burgerBuilderActions.clearState())
     }
 }
 
