@@ -13,10 +13,10 @@ const initialState = {
     error: false
 }
 
-const reducer = (state = initialState, action) => {
+const burgerBuilderReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case actionTypes.ADD_INGREDIENT:
+        case actionTypes.ADD_INGREDIENT:        
             return {
                 ...state,
                 ingredients: {
@@ -38,7 +38,7 @@ const reducer = (state = initialState, action) => {
 
         case actionTypes.CLEAR_STATE:
             return {
-                ...initialState,
+                ...state,
                 ingredients: {
                     ...initialState.ingredients
                 }
@@ -46,13 +46,19 @@ const reducer = (state = initialState, action) => {
 
             case actionTypes.SET_INGREDIENTS:
             return {
-                ...initialState,
-                ingredients: action.ingredients
+                ...state,
+                ingredients: {
+                    salad: action.ingredients.salad,
+                    bacon: action.ingredients.bacon,
+                    cheese: action.ingredients.cheese,
+                    meat: action.ingredients.meat
+                },
+                totalPrice: 4
             };
 
             case actionTypes.FETCH_INGREDIENTS_FAILED:
             return {
-                ...initialState,
+                ...state,
                 error: true
             };
 
@@ -61,4 +67,4 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-export default reducer;
+export default burgerBuilderReducer;
