@@ -21,6 +21,7 @@ class BurgerBuilder extends React.Component {
 
     purchaseHandler() {
         if(!this.props.isAuthenticated) {
+            this.props.onSetAuthRedirectPath('/checkout');
             this.props.history.push('/auth');            
         }
         this.setState({ purchasing: true });
@@ -104,7 +105,7 @@ const mapStateToProps = (state) => {
         price: state.burgerBuilder.totalPrice,
         error: state.burgerBuilder.error,
         purchased: state.order.purchased,
-        isAuthenticated: state.auth.token !== null 
+        isAuthenticated: state.auth.token !== null
     }
 }
 
@@ -113,7 +114,8 @@ const mapDispatchToProps = (dispatch) => {
         onIngredientInit: () => dispatch(actions.initIngredients()),
         onIngredientAdded: (ingredientName) => dispatch(actions.addIngredient(ingredientName)),
         onIngredientRemoved: (ingredientName) => dispatch(actions.removeIngredient(ingredientName)),
-        onInitPurchase: () => dispatch(actions.purchaseInit())
+        onInitPurchase: () => dispatch(actions.purchaseInit()),
+        onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
     }
 }
 
